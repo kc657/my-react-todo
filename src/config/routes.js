@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router, browserHistory} from 'react-router'
-import routes from './config/routes.js'
+import {Route} from 'react-router'
+import TodosContainer from '../containers/TodosContainer'
+import App from '../App'
 
-ReactDOM.render(
-  <Router routes={routes} history={browserHistory}/>,
-  document.getElementById('root')
-);
+export default (
+  <Route path='/' component={App}>
+    <Route path='/todos' component={TodosContainer}/>
+  </Route>
+)
